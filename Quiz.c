@@ -6,9 +6,10 @@
 #include "Quiz.h"
 
 int carregar_perguntas(Pergunta quiz[], const char* nome_arquivo) {
-    FILE *f = fopen(nome_arquivo, "r");
-    if (!f) {
-        printf("\nErro ao abrir arquivo %s\n", nome_arquivo);
+    FILE *f = fopen("Perguntas.txt", "r");
+    if (f == NULL) {
+        printf("\nErro ao abrir arquivo %s\n\n", nome_arquivo);
+        system("pause");
         return 0;
     }
     char linha[256];
@@ -31,33 +32,36 @@ int carregar_perguntas(Pergunta quiz[], const char* nome_arquivo) {
     return 5;
 };
 
-void iniciar_quiz(Pergunta quiz[], int total_perguntas) {
+void iniciar_quiz(Pergunta quiz[], int total_perguntas, int *pontAtual) {
     setlocale(LC_ALL, "");
+    *pontAtual = 0;
     int resposta;
     for (int i = 0; i < total_perguntas;i++)
     {
         system("cls");
-        printf("\n--- PERGUNTA NUMERO %d ---\n", i+1);
+        printf("\n--- PERGUNTA NÃšMERO %d ---\n", i+1);
         printf("    %s", quiz[i].enunciado);
         for(int j = 0;j < 5;j++)
         {
             printf("\n%s", quiz[i].opcoes[j]);
         }
         printf("\n");
-        printf("\nDigite o numero da resposta correta(1-5): ");
+        printf("\nDigite o nÃºmero da resposta correta(1-5): ");
         scanf("%d", &resposta);
         if (resposta != quiz[i].resposta_correta)
         {
             system("cls");
-            printf("\n\n      Não foi dessa vez!! Tente na próxima pergunta!\n\n");
+            printf("\n\n      NÃ£o foi dessa vez!! Tente na prÃ³xima pergunta!\n\n");
             system("pause");
         }
         else
         {
+            (*pontAtual)++;
             system("cls");
-            printf("\n\n     Bom!!! Vamos seguir para a próxima\n\n");
+            printf("\n\n     Bom!!! Vamos seguir para a prÃ³xima\n\n");
             system("pause");
         }
     }
 };
+
 
