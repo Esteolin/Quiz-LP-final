@@ -2,7 +2,7 @@
 
 ### *Desenvolvido por:*
 
-Caior Henrique Queiroz <br>
+Caio Henrique Queiroz <br>
 Gabriel Franco <br>
 Matheus Esteolin Pescarolo
 

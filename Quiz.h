@@ -12,7 +12,9 @@ typedef struct {
 
 int carregar_perguntas(Pergunta quiz[], const char* nome_arquivo);
 void menu();
-void iniciar_quiz(Pergunta quiz[], int total_perguntas);
+void iniciar_quiz(Pergunta quiz[], int total_perguntas, int *pontAtual);
 
 #endif
+
+
 
