@@ -33,7 +33,9 @@ int carregar_perguntas(Pergunta quiz[], const char* nome_arquivo) {
 };
 
 void iniciar_quiz(Pergunta quiz[], int total_perguntas, int *pontAtual) {
-    setlocale(LC_ALL, "");
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+    setlocale(LC_ALL, "pt_BR.UTF-8");
     *pontAtual = 0;
     int resposta;
     for (int i = 0; i < total_perguntas;i++)

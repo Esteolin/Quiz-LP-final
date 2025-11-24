@@ -3,10 +3,10 @@
 #include <locale.h>
 #include "Quiz.h"
 #include "Consulta.h"
+#include <windows.h>
 
 int main()
 {
-    setlocale(LC_ALL, "");
     Pergunta teste[5];
     carregar_perguntas(teste, "Perguntas.txt");
     int PontAtual = 0;
